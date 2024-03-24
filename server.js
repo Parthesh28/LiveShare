@@ -6,4 +6,7 @@ const io = require("socket.io")(8000, {
 
 io.on("connect", (socket) => {
     console.log("connected to live server");
+    socket.on("message", (content) => {
+        console.log(content)
+    })
 })
